@@ -16,7 +16,7 @@ To achieve the above we are implementing:-
 
 ## Components of this system
 
-### User Management System [>](/UMS/)
+### User Management System [>](./UMS/)
 
 ### Minimal UI
 
