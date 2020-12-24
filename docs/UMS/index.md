@@ -49,3 +49,22 @@ To register new user to VideoSystem.
 }
 ```
 
+**Response Body**
+
+- **On Success**
+
+```js
+{
+    _id, //MongodbObjectId as String
+    username, //String
+    password, //String
+    name //String
+}
+```
+
+- **On Error**
+
+```js
+{error:e.message, result:null}
+```
+
