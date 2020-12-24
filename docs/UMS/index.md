@@ -29,3 +29,23 @@ Major member funtions:-
 This class provides a set of function, with strict verification protocol to ensure an added layer of security, if the UMS server has some security flaw by any chance.
 
 ## Endpoints
+
+### `/signup` - POST
+
+To register new user to VideoSystem.
+
+**Request Header**
+```YAML
+"Content-Type" : "application/json"
+```
+
+**Request Body**
+
+```js
+{
+    username, //unique username string {type:'string', maxLength:32, minLength:3, "pattern": "^([a-z]|[0-9])*$"}
+    password, //password for further authentication {type:'string', maxLength:32, minLength:3}
+    name //user's full_name {type:'string', maxLength:63, minLength:1}
+}
+```
+
