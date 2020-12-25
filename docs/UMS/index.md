@@ -68,3 +68,68 @@ To register new user to VideoSystem.
 {error:e.message, result:null}
 ```
 
+
+### `/login` - POST
+
+Login user to Video system, and return user_token which can be used to verify user across the micro services.
+
+**Request Header**
+```YAML
+"Content-Type" : "application/json"
+```
+
+**Request Body**
+
+```js
+{
+    username, //unique username string {type:'string', maxLength:32, minLength:3, "pattern": "^([a-z]|[0-9])*$"}
+    password, //password for further authentication {type:'string', maxLength:32, minLength:3}
+}
+```
+
+**Response Body**
+
+- **On Success**
+
+```js
+{
+    _id, //MongodbObjectId as String
+    username, //String
+    user_token, //String (JWT Token)
+}
+```
+
+- **On Error**
+
+```js
+{error:e.message, result:null}
+```
+
+### `/whoami` - POST
+
+Verify the user's request and return user data
+
+**Request Body**
+
+```js
+{
+    user_token, //String (JWT Token)
+}
+```
+**Response Body**
+
+- **On Success**
+
+```js
+{
+    _id, //MongodbObjectId as String
+    username, //String
+    name, //String
+}
+```
+
+- **On Error**
+
+```js
+{error:e.message, result:null}
+```
