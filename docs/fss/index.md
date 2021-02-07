@@ -12,14 +12,13 @@ These endpoints intended to deal with files/object is size up to 2GB. However, t
 
 > - Reduce/Eliminate any IO bottlenecks on the DB
 > - Reduce query time
-> - Prevent need of a single node to be very large
-> - Follow a streaming mechanism large files
+> - Prevent need of a single node to be very powerful
+> - Follow a streaming mechanism for large files
 
 ### WebSocket
 
 WebSocket transport is intended to perform IO (mostly upload) with large files, to ensure a fast, efficient & network failure resistant upload of files.
 
-In Video System we have used it upload video files from user's browser. We store the video files in chunks of data as objects in the DB of File Store System, and a `file_upload_manifest` is prepared, which can be used to retrive the chunks of the file from the DB.
+In Video System we have used it upload video files from the user's browser. We store the video files in chunks of data as objects in the DB of File Store System, and a `file_upload_manifest` is prepared, which can be used to retrieve the chunks of the file from the DB.
 
-> **`file_upload_manifest`** is a JSON data, with holded the collection of `object_id` & `chunk_index` of the data chunks and other meta data of the file
-
+> **`file_upload_manifest`** is a JSON data, with holds the collection of `object_id` & `chunk_index` of the data chunks and other metadata of the file
