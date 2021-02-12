@@ -24,4 +24,4 @@ To achieve the above we are implementing:-
 
 ### Remote Processing demon
 
-### Streaming server
+### Data server
