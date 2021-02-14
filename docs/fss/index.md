@@ -38,13 +38,13 @@ During the upload a state full manifest of the file is maintined in the `video_u
 
 ```js
 {
-   _id: MongoDbObjectId,
-   user_id: string,
+   _id: MongoDbObjectId,   // Uuid
+   user_id: string,        // 
    name: string,
    size: number,
    mime_type: string,
    upload_size: number,
-   upload_end: boolean
+   upload_end: boolean,
    chunks: [
       {   
          object_id: string
@@ -54,3 +54,24 @@ During the upload a state full manifest of the file is maintined in the `video_u
    ]
 }
 ```
+
+**Steps performed during upload Process**
+
+- **`init`**: Intialize upload of a new video file. FileManifest is created and added to `video_uploads` collection of the Document Database.
+- **`chunk`**: Send buffer data of video file in Chunks. All chunk are added as with `object_id` in Masterless DB and FileManifest is updated for the new chunk.
+- **`reco`**: Reconnect to File Store System server with incomple file upload. FileManifest recovered from Masterless DB and the client side FileManifest is retured to the client.
+
+#### BSON usage during file upload
+
+**BSON (Binary JSON)** Is JSON like notation for storing JS Object in Binary format, which is more efficient than JSON in terms of size and parsing.
+
+During the file upload process, we not only store inbuilt JS type but also Buffer data as Uint8Array, and storing Uint8Array in conventional JSON as a string is very **in**efficient.
+
+While sending chunks we need to send the following attributes:-
+
+- `type` : 'chunk'
+- `upload_id` Uuid of the file upload
+- `meta_data` : `{slice_start: number}` 
+- `data` : Buffer
+
+To package the above data together in a single socket emit, BSON happens to be the most efficient format.
