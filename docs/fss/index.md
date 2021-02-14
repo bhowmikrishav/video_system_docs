@@ -100,8 +100,7 @@ Table of chunk set on Document DB:
 | 0db8af20-5ba9-11eb-9544-08b50d13edd5\|13496 | 102400 | 102400 |
 | 0def2870-5ba9-11eb-a472-d9ce90888025\|13496 | 204800 | 60040 |
 
-Table of Objects on Masterless DB
-
+Table of Objects on Masterless DB:
 
 | user_id | id | data |
 |--|--|--|
