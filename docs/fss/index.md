@@ -75,3 +75,38 @@ While sending chunks we need to send the following attributes:-
 - `data` : Buffer
 
 To package the above data together in a single socket emit, BSON happens to be the most efficient format.
+
+## Object Storage
+
+An Object is a key-value tuple. `Key` is Uuid assigned to each object and can be used to retrieve the object and thus the value.
+
+**Fields in Object Storage tupple**
+
+```js
+{
+   user_id: string,
+   id: string,       //object_id - Uuid of the Object
+   data: Blob        //buffer data - Data of the Object
+}
+```
+
+**Storing a file with multiple objects**
+
+Table of chunk set on Document DB:
+
+| object_id | slice_start | size |
+|--|--|--|
+| 0d92feb0-5ba9-11eb-8176-dd41cb581801\|13496 | 0 | 102400 |
+| 0db8af20-5ba9-11eb-9544-08b50d13edd5\|13496 | 102400 | 102400 |
+| 0def2870-5ba9-11eb-a472-d9ce90888025\|13496 | 204800 | 60040 |
+
+Table of Objects on Masterless DB
+
+
+| user_id | id | data |
+|--|--|--|
+| 6009103f58d26934b82c6165 | 0d92feb0-5ba9-11eb-8176-dd41cb581801\|13496 | <Buffer...102400> |
+| 6009103f58d26934b82c6165 | 0db8af20-5ba9-11eb-9544-08b50d13edd5\|13496 | <Buffer...102400> |
+| 6009103f58d26934b82c6165 | 0def2870-5ba9-11eb-a472-d9ce90888025\|13496 | <Buffer...60040> |
+
+
