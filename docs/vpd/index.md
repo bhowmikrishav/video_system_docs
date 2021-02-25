@@ -85,7 +85,7 @@ ENCODER=Lavc58.112.101 libopus
 DURATION=00:00:10.700000000
 start_time=5.353000
 
-```
+
 ### FFMPEG installation
 
 #### Ubuntu
