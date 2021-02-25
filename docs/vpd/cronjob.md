@@ -1,1 +1,3 @@
-# AJ
+# VIDEO PROCESSING DAEMON CRONJOB
+
+Introduction:-
