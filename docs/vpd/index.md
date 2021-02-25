@@ -22,3 +22,12 @@ For example, say you have an MP3 file and want it converted into an OGG file:<br
 > `ffmpeg -i input.mp3 output.ogg` 
 
 This command takes an MP3 file called  **input.mp3**  and converts it into an OGG file called  **output.ogg**. From FFmpeg's point of view, this means converting the MP3 audio stream into a Vorbis audio stream and wrapping this stream into an OGG container. You didn't have to specify stream or container types, because FFmpeg figured it out for you.
+## Selecting your codecs
+We can select the codecs needed by using the  **-c**  flag.
+
+This flag lets you set the different codec to use for each stream. For example, to set the audio stream to be Vorbis, you would use the following command:
+> ffmpeg  -i input.mp3 -c:a libvorbis output.ogg
+
+**libvorbis** package contains a general purpose audio and music encoding format. This is useful for creating (encoding) and playing (decoding) sound in an open format.
+
+The command **ffmpeg -codecs** will print every codec FFmpeg knows about. The output of this command will change depending on the version of FFmpeg you have installed.
