@@ -56,5 +56,41 @@ This modifies the video to 1280x720 in the output, but we can set the width and 
 `ffmpeg  -i  input.mkv -c:a copy  -s  1280x720 output.mkv`
 
 This produces the exact same output as the earlier command. If we want to set custom sizes in FFmpeg, please remember that the width parameter (**1280**) comes before height (**720**).
+## FFMPEG commands
+#### Command
 
+> ffmpeg -i pride.mp4 -c:v libvpx-vp9 -crf 30 -b:v 2000k -map 0 -segment_time 00:00:05 -f segment output%03d.webm
+
+> ffmpeg -i pride.mp4 -c:v libvpx-vp9 -crf 30 -b:v 2000k -map 0 -segment_time 00:00:05 -f segment output%d.webm
+
+#### Probe result of output001.webm
+
+```
+[Video Stream]
+codec_name=vp9
+codec_long_name=Google VP9
+coded_width=1920
+coded_height=800
+display_aspect_ratio=12:5
+start_time=5.346000
+pix_fmt=yuv420p
+ENCODER=Lavc58.112.101 libvpx-vp9
+DURATION=00:00:10.685000000
+
+[Audio Stream]
+codec_name=opus
+codec_long_name=Opus (Opus Interactive Audio Codec)
+channel_layout=stereo
+ENCODER=Lavc58.112.101 libopus
+DURATION=00:00:10.700000000
+start_time=5.353000
+
+```
+### FFMPEG installation
+
+#### Ubuntu
+
+sudo apt update
+sudo apt install ffmpeg
+ffmpeg -version
 
