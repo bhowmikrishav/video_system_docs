@@ -33,4 +33,5 @@ Steps of implementing the Video player prototype
 ## Video Chunks as Segments
 
 Instead of encoding the entire video file with a target quality, the complexity of each video chunk is considered during the encoding process.
+
 One of the clear benefits of dividing the whole video file into segments is that because the client player issues normal HTTP request for entire file,this type of streaming and rate adaptation is well supported by the existing HTTP ecosystem. Using segmented video chunks increases the streaming efficiency as the requested chunks are loaded as per the users' request, instead of the entire video file. 
