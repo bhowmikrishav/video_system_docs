@@ -29,5 +29,32 @@ This flag lets you set the different codec to use for each stream. For example, 
 > ffmpeg  -i input.mp3 -c:a libvorbis output.ogg
 
 **libvorbis** package contains a general purpose audio and music encoding format. This is useful for creating (encoding) and playing (decoding) sound in an open format.
-
 The command **ffmpeg -codecs** will print every codec FFmpeg knows about. The output of this command will change depending on the version of FFmpeg you have installed.
+
+### Influencing the quality
+Now that we have a handle on the codecs, the next question is: How do we set the quality of each stream?
+The simplest method is to change the bitrate, which may or may not result in a different quality. 
+
+To set the bitrate of each stream, you use the  **-b**  flag, which works in a similar fashion to the  **-c**  flag, except instead of codec options we set a bitrate.
+
+For example, to change the bitrate of the video, we would use it like this:
+
+`ffmpeg  -i  input.webm -c:a copy -c:v vp9 -b:v 1M output.mkv`
+
+This will copy the audio (**-c:a copy**) from  **input.webm**  and convert the video to a VP9 codec (**-c:v vp9**) with a bit rate of 1M/s (**-b:v**), all bundled up in a Matroska container (**output.mkv**).
+
+Another way we can impact quality is to adjust the frame rate of the video using the  **-r**  option:
+
+`ffmpeg  -i  input.webm -c:a copy -c:v vp9  -r  30  output.mkv`
+
+We can also adjust the dimensions of your video using FFmpeg. The simplest way is to use a predetermined video size:
+
+`ffmpeg  -i  input.mkv -c:a copy  -s  hd720 output.mkv`
+
+This modifies the video to 1280x720 in the output, but we can set the width and height manually if we want:
+
+`ffmpeg  -i  input.mkv -c:a copy  -s  1280x720 output.mkv`
+
+This produces the exact same output as the earlier command. If we want to set custom sizes in FFmpeg, please remember that the width parameter (**1280**) comes before height (**720**).
+
+
