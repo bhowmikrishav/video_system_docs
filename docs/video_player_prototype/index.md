@@ -23,3 +23,11 @@ Steps of implementing the Video player prototype
 - Mime type is the `video/webm`. Webm is the media file format and a container for VP8, VP9, AV1, vorbis and opus file encodings. Here we are VP9 for video and opus for audio.
 - Creating new object for MediaSource class. 
 - The URL.createObjectURL() static method creates a DOMString containing a URL representing the object given in the parameter. 
+- Wait for the mediasource object to reach the state of 'Sourceopen'
+- Create source buffer using MimeCodec 
+- the Source buffer mode is set to 'segment'.
+- Load the video chunk using an http request and then convert it into an Uint8Array
+- appendBuffer function is used to append the source buffer with the loaded video chunk
+- We perform iterations of loading the video chunks and appending the source buffer until all the video chunks are loaded.
+- Create an `XMLHttpRequest` object.The XMLHttpRequest object can be used to exchange data with a web server behind the scenes.
+- The [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) method **open()** initializes a newly-created request, or re-initializes an existing one. `ArrayBuffer` type of data is contained in the response.
