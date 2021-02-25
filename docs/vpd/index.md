@@ -65,7 +65,6 @@ This produces the exact same output as the earlier command. If we want to set cu
 
 #### Probe result of output001.webm
 
-```
 [Video Stream]
 codec_name=vp9
 codec_long_name=Google VP9
@@ -95,6 +94,7 @@ sudo apt install ffmpeg
 ffmpeg -version
 
 
+
 # FFPROBE
 ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.
 
@@ -103,12 +103,14 @@ For example it can be used to check the format of the container used by a multim
 If a url is specified in input, ffprobe will try to open and probe the url content. If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.
 
 ffprobe may be employed both as a standalone application or in combination with a textual filter, which may perform more sophisticated processing, e.g. statistical processing or plotting.
+
 ### Options
 
 **Options** are used to list some of the formats supported by ffprobe or for specifying which information to display, and for setting how **ffprobe** will show it.
 Some options are applied per-stream, e.g. 
 **bitrate or codec**. 
 Stream specifiers are used to precisely specify which stream(s) a given option belongs to.
+
 ### Generic options
 
 These options are shared amongst the ff* tools.
