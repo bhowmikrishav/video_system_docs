@@ -1,6 +1,11 @@
-# FFMPEG
-It is a free and open-source platform consisting of a vast
-software suite of libraries and programs for handling video, audio, and other
+# Video Processing Daemon
+
+This is Remort Daemon, which executes cron jobs that trigger video processing functions.
+
+These Video processing function, search unprocessed video files and performs their processing and load the processed video_chunks along with the video_manifest back to their respective databases.
+
+## FFMPEG
+It is a free and open-source platform comprising of the software suite of libraries and programs for handling video, audio, and other
 multimedia files and streams. 
 > At its core is the **FFmpeg** program itself,
 designed for command-line-based processing of video and audio files, and
@@ -15,7 +20,7 @@ For instance To convert a flv file to mp4:
 
 
 ## Basic conversion
-The thing that trips up most people when it comes to converting audio and video is selecting the correct formats and containers. Luckily, FFmpeg is pretty clever with its default settings. Usually it automatically selects the correct codecs and container without any complex configuration.<br />
+The thing that trips up most people when it comes to converting audio and video is selecting the correct formats and containers. Luckily, FFmpeg is pretty clever with its default settings. Usually, it automatically selects the correct codecs and container without any complex configuration.<br />
 
 For example, say you have an MP3 file and want it converted into an OGG file:<br />
 
@@ -28,14 +33,14 @@ We can select the codecs needed by using the  **-c**  flag.
 This flag lets you set the different codec to use for each stream. For example, to set the audio stream to be Vorbis, you would use the following command:
 > ffmpeg  -i input.mp3 -c:a libvorbis output.ogg
 
-**libvorbis** package contains a general purpose audio and music encoding format. This is useful for creating (encoding) and playing (decoding) sound in an open format.
+**libvorbis** package contains a general-purpose audio and music encoding format. This is useful for creating (encoding) and playing (decoding) sound in an open format.
 The command **ffmpeg -codecs** will print every codec FFmpeg knows about. The output of this command will change depending on the version of FFmpeg you have installed.
 
 ### Influencing the quality
 Now that we have a handle on the codecs, the next question is: How do we set the quality of each stream?
-The simplest method is to change the bitrate, which may or may not result in a different quality. 
+The simplest method is to change the bitrate, which may or may not result in different qualities. 
 
-To set the bitrate of each stream, you use the  **-b**  flag, which works in a similar fashion to the  **-c**  flag, except instead of codec options we set a bitrate.
+To set the bitrate of each stream, you use the  **-b**  flag, which works similarly to the  **-c**  flag, except instead of codec options we set a bitrate.
 
 For example, to change the bitrate of the video, we would use it like this:
 
@@ -55,7 +60,7 @@ This modifies the video to 1280x720 in the output, but we can set the width and 
 
 `ffmpeg  -i  input.mkv -c:a copy  -s  1280x720 output.mkv`
 
-This produces the exact same output as the earlier command. If we want to set custom sizes in FFmpeg, please remember that the width parameter (**1280**) comes before height (**720**).
+This produces the same output as the earlier command. If we want to set custom sizes in FFmpeg, please remember that the width parameter (**1280**) comes before height (**720**).
 ## FFMPEG commands
 #### Command
 
@@ -98,9 +103,9 @@ ffmpeg -version
 # FFPROBE
 ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.
 
-For example it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.
+For example, it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.
 
-If a url is specified in input, ffprobe will try to open and probe the url content. If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.
+If a url is specified in the input, ffprobe will try to open and probe the URL content. If the URL cannot be opened or recognized as a multimedia file, a positive exit code is returned.
 
 ffprobe may be employed both as a standalone application or in combination with a textual filter, which may perform more sophisticated processing, e.g. statistical processing or plotting.
 
@@ -121,7 +126,7 @@ These options are shared amongst the ff* tools.
 
 > -h, -?, -help, --help [arg]
 
-*Show help. An optional parameter may be specified to print help about a specific item. If no argument is specified, only basic (non advanced) tool options are shown.*
+*Show help. An optional parameter may be specified to print help about a specific item. If no argument is specified, only basic (non-advanced) tool options are shown.*
 
 Possible values of  arg  are:
 
@@ -135,8 +140,8 @@ Possible values of  arg  are:
 
 > emphasized textdecoder=decoder_name
 
-*Print detailed information about the decoder named  decoder_name. Use the  -decoders  option to get a list of all decoders.*
+*Print detailed information about the decoder named  decoder_name. Use the `-decoders` option to get a list of all decoders.*
 
 > encoder=encoder_name
 
-*Print detailed information about the encoder named  encoder_name. Use the  -encoders  option to get a list of all encoders.*
+*Print detailed information about the encoder named  encoder_name. Use the  `-encoders` option to get a list of all encoders.*
