@@ -15,6 +15,10 @@ For instance To convert a flv file to mp4:
 
 
 ## Basic conversion
-The thing that trips up most people when it comes to converting audio and video is selecting the correct formats and containers. Luckily, FFmpeg is pretty clever with its default settings. Usually it automatically selects the correct codecs and container without any complex configuration.
+The thing that trips up most people when it comes to converting audio and video is selecting the correct formats and containers. Luckily, FFmpeg is pretty clever with its default settings. Usually it automatically selects the correct codecs and container without any complex configuration.\
 
-For example, say you have an MP3 file and want it converted into an OGG file:  `ffmpeg -i input.mp3 output.ogg`  This command takes an MP3 file called  **input.mp3**  and converts it into an OGG file called  **output.ogg**. From FFmpeg's point of view, this means converting the MP3 audio stream into a Vorbis audio stream and wrapping this stream into an OGG container. You didn't have to specify stream or container types, because FFmpeg figured it out for you.
+For example, say you have an MP3 file and want it converted into an OGG file:\  
+
+> `ffmpeg -i input.mp3 output.ogg`  \
+
+This command takes an MP3 file called  **input.mp3**  and converts it into an OGG file called  **output.ogg**. From FFmpeg's point of view, this means converting the MP3 audio stream into a Vorbis audio stream and wrapping this stream into an OGG container. You didn't have to specify stream or container types, because FFmpeg figured it out for you.
