@@ -94,3 +94,47 @@ sudo apt update
 sudo apt install ffmpeg
 ffmpeg -version
 
+
+# FFPROBE
+ffprobe gathers information from multimedia streams and prints it in human- and machine-readable fashion.
+
+For example it can be used to check the format of the container used by a multimedia stream and the format and type of each media stream contained in it.
+
+If a url is specified in input, ffprobe will try to open and probe the url content. If the url cannot be opened or recognized as a multimedia file, a positive exit code is returned.
+
+ffprobe may be employed both as a standalone application or in combination with a textual filter, which may perform more sophisticated processing, e.g. statistical processing or plotting.
+### Options
+
+**Options** are used to list some of the formats supported by ffprobe or for specifying which information to display, and for setting how **ffprobe** will show it.
+Some options are applied per-stream, e.g. 
+**bitrate or codec**. 
+Stream specifiers are used to precisely specify which stream(s) a given option belongs to.
+### Generic options
+
+These options are shared amongst the ff* tools.
+
+> -L
+
+*Show license.*
+
+> -h, -?, -help, --help [arg]
+
+*Show help. An optional parameter may be specified to print help about a specific item. If no argument is specified, only basic (non advanced) tool options are shown.*
+
+Possible values of  arg  are:
+
+> long
+
+*Print advanced tool options in addition to the basic tool options.*
+
+> full
+
+*Print complete list of options, including shared and private options for encoders, decoders, demuxers, muxers, filters, etc.*
+
+> emphasized textdecoder=decoder_name
+
+*Print detailed information about the decoder named  decoder_name. Use the  -decoders  option to get a list of all decoders.*
+
+> encoder=encoder_name
+
+*Print detailed information about the encoder named  encoder_name. Use the  -encoders  option to get a list of all encoders.*
