@@ -13,3 +13,13 @@ A `MediaSource` represents a source of media for an audio or video element. Once
 
 - [`MediaSource.readyState`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState)  : returns an enum representing the state of the current  `MediaSource`, whether it is not currently attached to a media element (`closed`), attached and ready to receive  [`SourceBuffer`](https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer)  objects (`open`), or attached but the stream has been ended via  [`MediaSource.endOfStream()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/endOfStream)  (`ended`.)
 - [`MediaSource.duration`](https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/duration) : gets and sets the duration of the current media being presented.
+
+
+## Video Player Implementation
+
+Steps of implementing the Video player prototype
+
+- Accessing dom video element using getElementById() function.
+- Mime type is the `video/webm`. Webm is the media file format and a container for VP8, VP9, AV1, vorbis and opus file encodings. Here we are VP9 for video and opus for audio.
+- Creating new object for MediaSource class. 
+- The URL.createObjectURL() static method creates a DOMString containing a URL representing the object given in the parameter. 
