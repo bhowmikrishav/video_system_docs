@@ -18,10 +18,10 @@ To achieve the above we are implementing:-
 
 ### User Management System [>](./UMS/)
 
-### Minimal UI
+### Minimal UI 
 
 ### File Store System [>](./fss/)
 
 ### Remote Processing demon
 
-### Data server
+### Data server [>](./DataServer/)
