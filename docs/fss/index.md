@@ -1,6 +1,6 @@
 # File Store System
 
-[(Github Repo)](https://github.com/rishavbhowmik/video_system_data_server)
+[(Github Repo)](https://github.com/rishavbhowmik/video_system_file_store)
 
 The Video System requires a microservices which manages and handles IO operation for media files and object storage. We call this microservice File Store System.
 
