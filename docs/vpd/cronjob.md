@@ -7,9 +7,11 @@
 **LOOKUP MECHANISM TO FIND A PROCESSING JOB** :- The look-up mechanism helps find a job , find a video which require processing in multiple resolutions. We perform a query on the database to search for unprocessed resolution of video upload. 
 
 **MECHANISM TO LOAD FILE LOCALLY** :- First, We clear the temporary folder then load the raw video file in the temporary folder . 
+
 ```js
 const raw_file_name = "temp/raw"+mime_to_ext(file_manifest.mime_type) . 
 ```
+
 Mime_to_exe is a function which makes sure whether the video file is in the desrired format.
 
 **PROCESSING AND MANIFEST CREATION** :- When a video stream is set up, a video manifest file is delivered to the player, itemizing the available streams. Like a restaurant menu, the manifest tells the player what resolutions and bitrates are available, and the player chooses an appropriate stream. 
