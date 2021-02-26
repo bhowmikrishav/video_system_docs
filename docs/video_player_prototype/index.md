@@ -1,5 +1,7 @@
 # Video Player Prototype
 
+[(Github Repo)](https://github.com/rishavbhowmik/video_system_player_exp1)
+
 ## Introduction to Media Source API
 
 The **MediaSource** interface of the [Media Source Extensions API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API) represents a source of media data for an [`HTMLMediaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement) object.
