@@ -1,5 +1,7 @@
 # File Store System
 
+[(Github Repo)](https://github.com/rishavbhowmik/video_system_data_server)
+
 The Video System requires a microservices which manages and handles IO operation for media files and object storage. We call this microservice File Store System.
 
 Filestore system workes with RESTFUL endpoints or WebSockets, depending on the respective IO operation taking place.
