@@ -145,3 +145,5 @@ Possible values of  arg  are:
 > encoder=encoder_name
 
 *Print detailed information about the encoder named  encoder_name. Use the  `-encoders` option to get a list of all encoders.*
+
+VPD is executed by [Cron Jobs](./cronjob)
