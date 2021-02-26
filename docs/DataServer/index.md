@@ -1,5 +1,7 @@
 # Data Server
 
+[(Github Repo)](https://github.com/rishavbhowmik/video_system_data_server)
+
 ## Introduction
 
 This microservice is a rest API-based system. The DataServer's role is to provide essential data navigating essential data from the system.
