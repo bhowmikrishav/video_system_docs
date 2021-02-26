@@ -1,6 +1,6 @@
 # Video Processing Daemon
 
-This is Remort Daemon, which executes cron jobs that trigger video processing functions.
+This is Remote Daemon, which executes cron jobs that trigger video processing functions.
 
 These Video processing function, search unprocessed video files and performs their processing and load the processed video_chunks along with the video_manifest back to their respective databases.
 
